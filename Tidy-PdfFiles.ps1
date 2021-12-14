@@ -9,7 +9,7 @@ foreach ($plik in Get-ChildItem -Path .\* -Include *.pdf) {
     }
 }
 cd .\PDFy
-foreach ($plik in Get-ChildItem -Path .\*) {
+foreach ($plik in Get-ChildItem -Path .\* -Include *.pdf) {
     $utworzono = $plik.CreationTime.toString("dd.MM.yyyy")
     if ( -not (  Test-Path .\$utworzono -PathType Container ) ) {
         New-Item -Name $utworzono -ItemType Directory
